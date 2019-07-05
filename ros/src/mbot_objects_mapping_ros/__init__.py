@@ -1,0 +1,1 @@
+from mbot_objects_mapping import ObjectsMapping

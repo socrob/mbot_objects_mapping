@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <arg name="namespace" default="mbot_perception" />
+  <group ns="$(arg namespace)">
+
+    <arg name="tracked_objects_array"       default="tracked_objects" />
+    <arg name="mapped_small_objects"        default="mapped_small_objects" />
+    <arg name="small_node_name"             default="mapper_small_objects" />
+    <arg name="max_covariance"              default="0.1" />
+
+    <!-- Small objects mapping -->
+    <node pkg="mbot_objects_mapping" type="mbot_objects_mapping_node" name="$(arg small_node_name)" output="log" respawn="true">
+      <rosparam command="load" file="$(find mbot_objects_mapping)/ros/config/small_objects_mapping.yaml"/>
+      <param name="tracked_objects" value="$(arg tracked_objects_array)"  type="string"/>
+      <param name="mapped_objects"  value="$(arg mapped_small_objects)"   type="string"/>
+
+      <param name="max_covariance" value="$(arg max_covariance)"                type="double"/>
+
+    </node>
+
+  </group>
+</launch>

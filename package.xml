@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>mbot_objects_mapping</name>
+  <version>2.2.0</version>
+  <description>Class to provide a map from object tracker</description>
+
+  <author email="enrico.piazza@polimi.it">Enrico Piazza</author>
+
+  <maintainer email="enrico.piazza@polimi.it">Enrico Piazza</maintainer>
+
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>rospy</build_depend>
+  <build_depend>mbot_perception_msgs</build_depend>
+  
+  <run_depend>rospy</run_depend>
+  <run_depend>mbot_perception_msgs</run_depend>
+  
+</package>
